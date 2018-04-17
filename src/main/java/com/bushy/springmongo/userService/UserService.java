@@ -17,7 +17,11 @@ public class UserService {
         this.userRepo = userRepo;
     }
 
-    public Optional<User> findUserbyId(Long id){
+    public Iterable<User> getAllUsers(){
+        return userRepo.findAll();
+    }
+
+    public Optional<User> findUserbyId(String id){
         return userRepo.findById(id);
     }
 
